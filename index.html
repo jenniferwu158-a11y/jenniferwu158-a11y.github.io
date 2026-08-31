@@ -414,21 +414,29 @@ footer a:hover{color:var(--accent)}
 
     <ol class="pub-list">
 
-      <!-- [EDIT 6] Replace this sample entry with your own writing. Duplicate the <li> block to add more entries. -->
       <li class="pub reveal">
         <div>
-          <span class="pub-tag">Course Project</span>
-          <h3 class="pub-title"><a href="your-writing-sample.pdf" target="_blank" rel="noopener">Sample Writing Title — Replace With Your Piece</a></h3>
+          <span class="pub-tag">Case Report</span>
+          <h3 class="pub-title"><a href="forecasting-project-1.pdf" target="_blank" rel="noopener">Modeling and Forecasting U.S. Federal Debt with a Log-ARIMA(4,1,4) Model</a></h3>
           <p class="pub-meta">
-            Course Name, Institution · Instructor Name
-            <span class="year">Term Year</span>
+            STAT-GB 6018 Forecasting Time Series Data, NYU Stern · Prof. Avi Giloni
+            <span class="year">Fall 2025</span>
           </p>
           <p class="pub-abs">
-            One to two sentences describing what the piece is about, the approach you took, and
-            the main finding or conclusion.
+            Fits an ARIMA(4,1,4) model with a constant to the log of quarterly U.S. Federal
+            Debt (FRED series GFDEBTN, 1966–2025) after a first difference removes the
+            deterministic upward trend; AICc selects this specification over the no-constant
+            ARIMA(5,1,5) alternative (-1334.01 vs. -1330.70). The AR(4) and MA(4) coefficients
+            are highly significant (p &lt; 0.001), consistent with shocks that stay influential
+            for roughly four quarters — a near-annual cycle in quarterly data — and standardized
+            residuals show no significant ACF/PACF spikes. Ljung-Box tests flag mild residual
+            autocorrelation at the 3- and 6-year horizons (p = 0.001, 0.039) that fades by lag
+            36, pointing to a longer-run cyclical component the model doesn't fully absorb. A
+            50-quarter-ahead forecast tracks the historical trend closely, with 95% intervals
+            that widen at a reasonable rate.
           </p>
           <div class="pub-links">
-            <a class="chip" href="your-writing-sample.pdf" target="_blank" rel="noopener">PDF</a>
+            <a class="chip" href="forecasting-project-1.pdf" target="_blank" rel="noopener">PDF</a>
           </div>
         </div>
       </li>
