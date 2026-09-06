@@ -441,6 +441,39 @@ footer a:hover{color:var(--accent)}
         </div>
       </li>
 
+      
+      <li class="pub reveal">
+        <div>
+          <span class="pub-tag">Case Report</span>
+          <h3 class="pub-title"><a href="forecasting-project-2.pdf" target="_blank" rel="noopener">Forecasting the USD/JPY Exchange Rate with an ARIMA(5,1,4)–GARCH(1,1) Model</a></h3>
+          <p class="pub-meta">
+            STAT-GB 6018 Forecasting Time Series Data, NYU Stern · Prof. Avi Giloni
+            <span class="year">Fall 2025</span>
+          </p>
+          <p class="pub-abs">
+            Models daily USD/JPY (Yahoo Finance, Dec 2020–Nov 2025) by taking logs to stabilize
+            the trend, then differencing once after the PACF showed a near-unit root and a second
+            difference introduced strong negative autocorrelation. An AICc grid search over
+            ARIMA(p,1,q) selects ARIMA(5,1,4) with a constant (AICc = -9619.17); the residuals are
+            serially uncorrelated but their squares are not, so an ARCH(q) sweep (q = 0–10) and a
+            GARCH(1,1) alternative are compared, with GARCH(1,1) winning decisively (AICc =
+            -9800.39 vs. -9701.83 for the best ARCH(4)). The fitted GARCH(1,1)
+            (&alpha;&#770; = 0.047, &beta;&#770; = 0.948, &alpha;&#770;+&beta;&#770; = 0.996) implies
+            a stationary, highly persistent volatility process. Layering GARCH(1,1) onto the
+            ARIMA(5,1,4) mean equation narrows the one-step-ahead 95% forecast interval for
+            log(JPY) from [5.04145, 5.06480] to [5.044003, 5.062238], and a backtest against the
+            |standardized residual| &gt; 1.96 rule finds a 5.39% violation rate across 1,299
+            observations — close to the nominal 5%, though a normal probability plot of the
+            residuals still shows tail deviations consistent with leptokurtosis the model doesn't
+            fully capture.
+          </p>
+          <div class="pub-links">
+            <a class="chip" href="forecasting-project-2.pdf" target="_blank" rel="noopener">PDF</a>
+          </div>
+        </div>
+      </li>
+
+
     </ol>
   </section>
 
