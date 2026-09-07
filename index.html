@@ -531,6 +531,39 @@ footer a:hover{color:var(--accent)}
         </div>
       </li>
 
+      <li class="pub reveal">
+        <div>
+          <span class="pub-tag">Case Report</span>
+          <h3 class="pub-title"><a href="ad-responses-anova.pdf" target="_blank" rel="noopener">Newspaper Advertisement Responses by Day and Section: A Two-Way ANOVA</a></h3>
+          <p class="pub-meta">
+            STAT-UB 17 Regression and Multivariate Data Analysis, NYU Stern · Prof. Sarah Abramowitz
+            <span class="year">Spring 2026</span>
+          </p>
+          <p class="pub-abs">
+            Uses a two-way ANOVA to test whether the number of responses to newspaper
+            advertisements differs by day of week, by section (news, business, sports), and
+            whether the two factors interact, after confirming skewness ratios (max 0.64) and
+            Levene's test (p = 0.975) support the normality and equal-variance assumptions. The
+            day&times;section interaction is highly significant (p &lt; .001) with a large effect
+            (partial &eta;&sup2; &asymp; 0.63): Business leads on Monday while News and Sports
+            both peak on Friday, and the ranking of sections flips across the week. Tukey-adjusted
+            simple-effects comparisons show Business beats News and Sports on Monday, News beats
+            Sports on Tuesday and Wednesday, Business beats News on Thursday, and News beats
+            Business on Friday; within sections, News dips sharply on Thursday and rebounds by
+            Friday, Business peaks on Monday, and Sports peaks on Friday. The results argue against
+            optimizing ad placement on a single factor &mdash; day and section have to be chosen
+            jointly to maximize response.
+          </p>
+          <p class="pub-abs" style="color:var(--ink-3);font-size:.83rem;margin-top:.5rem">
+            Group project with Yiming Wang and Param.
+          </p>
+          <div class="pub-links">
+            <a class="chip" href="ad-responses-anova.pdf" target="_blank" rel="noopener">PDF</a>
+            <a class="chip" href="ad-responses-analysis.R" download="ad-responses-analysis.R" target="_blank" rel="noopener">R Script</a>
+          </div>
+        </div>
+      </li>
+
 
     </ol>
   </section>
