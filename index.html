@@ -464,4 +464,229 @@ footer a:hover{color:var(--accent)}
             not.
           </p>
           <div class="pub-links">
-            <a
+            <a class="chip" href="charity-ratings-correlation.pdf" target="_blank" rel="noopener">PDF</a>
+            <a class="chip" href="charity-ratings-analysis.R" download="charity-ratings-analysis.R" target="_blank" rel="noopener">R Script</a>
+          </div>
+        </div>
+      </li>
+      <li class="pub reveal">
+        <div>
+          <span class="pub-tag">Case Report</span>
+          <h3 class="pub-title"><a href="unemployment-lfpr-regression.pdf" target="_blank" rel="noopener">Unemployment and Labor Force Participation: A Structural Break Around the 2008 Financial Crisis</a></h3>
+          <p class="pub-meta">
+            STAT-UB 17 Regression and Multivariate Data Analysis, NYU Stern · Prof. Sarah Abramowitz
+            <span class="year">Spring 2026</span>
+          </p>
+          <p class="pub-abs">
+            Tests whether the civilian unemployment rate (CUNR) predicts labor force participation
+            (CLFPR) using 1980&ndash;2024 FRED data, to weigh evidence for the discouraged-worker
+            versus added-worker effect. Over the full sample the two variables show no linear
+            pattern and no significant correlation (p &asymp; 0.89), but splitting the data at the
+            2008 financial crisis reveals two opposite, individually significant regimes: 1980&ndash;2008
+            is strongly negative (r &asymp; -0.79, p = 3.17e-07; CLFPR = 69.66 &minus; 0.62&middot;CUNR,
+            R&sup2; &asymp; 0.63), consistent with the discouraged-worker effect, while 2009&ndash;2024 is
+            moderately positive (r &asymp; 0.68, p &asymp; 0.0027; CLFPR = 61.28 + 0.33&middot;CUNR,
+            R&sup2; &asymp; 0.46), consistent with the added-worker effect. The opposing signs of similar
+            magnitude explain why the pooled sample shows no relationship. Residual diagnostics flag
+            1980 and 1983 (via standardized residuals and Cook's distance, respectively) in the earlier
+            period and 2009 and 2021 in the later one, illustrating how the two measures can flag
+            different points depending on whether an observation has an extreme individual error or
+            an extreme leverage value.
+          </p>
+          <div class="pub-links">
+            <a class="chip" href="unemployment-lfpr-regression.pdf" target="_blank" rel="noopener">PDF</a>
+            <a class="chip" href="unemployment-lfpr-analysis.R" download="unemployment-lfpr-analysis.R" target="_blank" rel="noopener">R Script</a>
+          </div>
+        </div>
+      </li>
+      <li class="pub reveal">
+        <div>
+          <span class="pub-tag">Case Report</span>
+          <h3 class="pub-title"><a href="ad-responses-anova.pdf" target="_blank" rel="noopener">Newspaper Advertisement Responses by Day and Section: A Two-Way ANOVA</a></h3>
+          <p class="pub-meta">
+            STAT-UB 17 Regression and Multivariate Data Analysis, NYU Stern · Prof. Sarah Abramowitz
+            <span class="year">Spring 2026</span>
+          </p>
+          <p class="pub-abs">
+            Uses a two-way ANOVA to test whether the number of responses to newspaper
+            advertisements differs by day of week, by section (news, business, sports), and
+            whether the two factors interact, after confirming skewness ratios (max 0.64) and
+            Levene's test (p = 0.975) support the normality and equal-variance assumptions. The
+            day&times;section interaction is highly significant (p &lt; .001) with a large effect
+            (partial &eta;&sup2; &asymp; 0.63): Business leads on Monday while News and Sports
+            both peak on Friday, and the ranking of sections flips across the week. Tukey-adjusted
+            simple-effects comparisons show Business beats News and Sports on Monday, News beats
+            Sports on Tuesday and Wednesday, Business beats News on Thursday, and News beats
+            Business on Friday; within sections, News dips sharply on Thursday and rebounds by
+            Friday, Business peaks on Monday, and Sports peaks on Friday. The results argue against
+            optimizing ad placement on a single factor &mdash; day and section have to be chosen
+            jointly to maximize response.
+          </p>
+          <p class="pub-abs" style="color:var(--ink-3);font-size:.83rem;margin-top:.5rem">
+            Group project with Yiming Wang and Param.
+          </p>
+          <div class="pub-links">
+            <a class="chip" href="ad-responses-anova.pdf" target="_blank" rel="noopener">PDF</a>
+            <a class="chip" href="ad-responses-analysis.R" download="ad-responses-analysis.R" target="_blank" rel="noopener">R Script</a>
+          </div>
+        </div>
+      </li>
+    </ol>
+  </section>
+  <!-- ═══════════════ PROJECTS ═══════════════ -->
+  <section id="projects">
+    <div class="sec-head reveal">
+      <span class="sec-num">02</span>
+      <h2 class="sec-title">Projects</h2>
+    </div>
+    <ol class="pub-list">
+       <li class="pub reveal">
+        <div>
+          <span class="pub-tag">GROUP PROJECT</span>
+          <h3 class="pub-title"><a href="standardaero-lbo-case.pdf" target="_blank" rel="noopener">StandardAero: A Take-Private LBO Case (VioletStone Capital)</a></h3>
+          <p class="pub-meta">
+            FINC-UB 32-002 Private Equity Finance, NYU Stern · Prof. Eliot Merrill
+            <span class="year">Spring 2026</span>
+          </p>
+          <p class="pub-abs">
+            A take-private LBO pitch for StandardAero (NYSE: SARO), the world's largest
+            independent pure-play aerospace-engine-aftermarket provider, structured at an
+            $11.7B entry TEV (14.5x 2025A Adj. EBITDA of $808M) with a 55%/45% equity/debt
+            split and 6.5x leverage. The thesis rests on a $123B&rarr;$138B global MRO
+            tailwind driving revenue growth through engine shop visits rather than new
+            aircraft, and a margin-recovery path (13.3%&rarr;~14.5% Adj. EBITDA margin) as
+            the LEAP learning curve matures and higher-margin Component Repair Services
+            grow as a share of revenue. The base Investment Case models an 11.8% revenue
+            CAGR to $10.6B by 2030 and projects a 19.4% IRR / 2.4x MOIC on $6.8B of sponsor
+            equity, versus 22.6% IRR / 2.8x MOIC under a Management Case (full LEAP
+            industrialization plus M&amp;A) and 12.4% IRR / 1.8x MOIC under a Downside Case.
+            A value-creation bridge attributes roughly 93% of gross value creation to EBITDA
+            growth against 7% from net debt paydown at a flat exit multiple, with sensitivity
+            tables flexing entry/exit multiples from 12.5x&ndash;16.5x.
+          </p>
+          <p class="pub-abs" style="color:var(--ink-3);font-size:.83rem;margin-top:.5rem">
+            Group project with Kelvin Torto, Maxon Yin, Sanansh Garg, Xubing Lai.
+          </p>
+          <div class="shots">
+            <a href="standardaero-slide-1.png" target="_blank" rel="noopener"><img src="standardaero-slide-1.png" alt="Deal summary slide"></a>
+            <a href="standardaero-slide-2.png" target="_blank" rel="noopener"><img src="standardaero-slide-2.png" alt="Value creation plan slide"></a>
+            <a href="standardaero-slide-3.png" target="_blank" rel="noopener"><img src="standardaero-slide-3.png" alt="Model and returns slide"></a>
+          </div>
+          <div class="pub-links">
+            <a class="chip" href="standardaero-lbo-case.pdf" target="_blank" rel="noopener">PDF</a>
+            <a class="chip" href="standardaero-lbo-model.xlsx" download="standardaero-lbo-model.xlsx" target="_blank" rel="noopener">LBO Model</a>
+          </div>
+        </div>
+      </li>
+    </ol>
+  </section>
+  <!-- ═══════════════ FOOTER ═══════════════ -->
+  <footer>
+    <span>© <span id="yr">2026</span> Zhenzhen Wu · NYU Shanghai</span>
+    <div class="foot-links">
+      <a href="mailto:zw4233@nyu.edu">Email</a>
+      <a href="https://www.linkedin.com/in/zhenzhen-wu-9a32002a0/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="cv.pdf" target="_blank" rel="noopener">CV</a>
+    </div>
+  </footer>
+</main>
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer">
+  <button class="lb-close" id="lbClose" aria-label="Close">&times;</button>
+  <button class="lb-nav lb-prev" id="lbPrev" aria-label="Previous">&#8249;</button>
+  <img id="lbImg" src="" alt="">
+  <button class="lb-nav lb-next" id="lbNext" aria-label="Next">&#8250;</button>
+  <span class="lb-count" id="lbCount"></span>
+</div>
+<script>
+// Theme: follow the OS by default, allow manual override, remember the choice.
+(function(){
+  var root=document.documentElement, KEY='theme';
+  var saved=null;
+  try{ saved=localStorage.getItem(KEY); }catch(e){}
+  var dark = saved ? saved==='dark'
+                   : window.matchMedia('(prefers-color-scheme:dark)').matches;
+  root.setAttribute('data-theme', dark?'dark':'light');
+  document.getElementById('themeBtn').addEventListener('click',function(){
+    var next = root.getAttribute('data-theme')==='dark' ? 'light' : 'dark';
+    root.setAttribute('data-theme',next);
+    try{ localStorage.setItem(KEY,next); }catch(e){}
+  });
+})();
+// Hairline under the nav bar once the page is scrolled.
+(function(){
+  var nav=document.getElementById('nav');
+  var onScroll=function(){ nav.classList.toggle('scrolled', window.scrollY>8); };
+  onScroll(); window.addEventListener('scroll',onScroll,{passive:true});
+})();
+// Fade elements in as they enter the viewport.
+(function(){
+  var items=document.querySelectorAll('.reveal');
+  if(!('IntersectionObserver' in window)){
+    items.forEach(function(el){el.classList.add('in')}); return;
+  }
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(e,i){
+      if(e.isIntersecting){
+        e.target.style.transitionDelay=(Math.min(i,5)*55)+'ms';
+        e.target.classList.add('in');
+        io.unobserve(e.target);
+      }
+    });
+  },{threshold:.12,rootMargin:'0px 0px -8% 0px'});
+  items.forEach(function(el){io.observe(el)});
+})();
+document.getElementById('yr').textContent=new Date().getFullYear();
+// Lightbox: click a thumbnail to view it full size without leaving the page.
+(function(){
+  var box=document.getElementById('lightbox'),
+      img=document.getElementById('lbImg'),
+      count=document.getElementById('lbCount'),
+      prev=document.getElementById('lbPrev'),
+      next=document.getElementById('lbNext'),
+      group=[], idx=0;
+  function show(i){
+    box.classList.remove('zoom');
+    idx=(i+group.length)%group.length;
+    var a=group[idx], thumb=a.querySelector('img');
+    img.src=a.getAttribute('href');
+    img.alt=thumb?thumb.alt:'';
+    count.textContent=group.length>1 ? (idx+1)+' / '+group.length : '';
+  }
+  function open(a){
+    group=Array.prototype.slice.call(a.closest('.shots').querySelectorAll('a'));
+    var many=group.length>1;
+    prev.style.display=next.style.display=many?'':'none';
+    show(group.indexOf(a));
+    box.classList.add('open');
+    requestAnimationFrame(function(){ box.classList.add('shown'); });
+    document.body.style.overflow='hidden';
+  }
+  function close(){
+    box.classList.remove('shown','zoom');
+    document.body.style.overflow='';
+    setTimeout(function(){ box.classList.remove('open'); img.src=''; },260);
+  }
+  document.addEventListener('click',function(e){
+    if(!e.target.closest) return;
+    var a=e.target.closest('.shots a');
+    if(a){ e.preventDefault(); open(a); }
+  });
+  img.addEventListener('click',function(e){
+    e.stopPropagation();
+    box.classList.toggle('zoom');
+    box.scrollTop=0;
+  });
+  document.getElementById('lbClose').addEventListener('click',close);
+  prev.addEventListener('click',function(e){ e.stopPropagation(); show(idx-1); });
+  next.addEventListener('click',function(e){ e.stopPropagation(); show(idx+1); });
+  box.addEventListener('click',function(e){ if(e.target===box) close(); });
+  document.addEventListener('keydown',function(e){
+    if(!box.classList.contains('open')) return;
+    if(e.key==='Escape') close();
+    if(e.key==='ArrowLeft') show(idx-1);
+    if(e.key==='ArrowRight') show(idx+1);
+  });
+})();
+</script>
+</body>
+</html>
