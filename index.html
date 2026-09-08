@@ -201,4 +201,267 @@ h1 em{font-style:italic;color:var(--accent)}
   text-decoration:none;color:var(--ink-2);border:1px solid var(--rule);
   padding:.24rem .58rem;border-radius:5px;transition:all .2s ease;
 }
-.chip:hover{color:var(--accent);border-color:var(--accent);background:var(--acce
+.chip:hover{color:var(--accent);border-color:var(--accent);background:var(--accent-soft)}
+/* ── Screenshot row ────────────────────────── */
+.shots{display:grid;grid-template-columns:repeat(3,1fr);gap:.55rem;margin:1.1rem 0 0}
+.shots a{display:block;border-radius:7px;overflow:hidden;border:1px solid var(--rule);
+  background:var(--bg-soft);transition:transform .26s cubic-bezier(.4,0,.2,1),box-shadow .26s ease}
+.shots a:hover{transform:translateY(-2px);box-shadow:var(--shadow)}
+.shots img{width:100%;aspect-ratio:16/10;object-fit:cover;display:block}
+/* ── Projects ──────────────────────────────── */
+.proj-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(19.5rem,1fr));gap:1.1rem}
+.card{
+  background:var(--bg-card);border:1px solid var(--rule);border-radius:11px;
+  padding:1.6rem 1.65rem 1.4rem;display:flex;flex-direction:column;
+  text-decoration:none;position:relative;overflow:hidden;
+  transition:transform .28s cubic-bezier(.4,0,.2,1),box-shadow .28s ease;
+}
+.card::before{
+  content:"";position:absolute;inset:0 0 auto 0;height:2px;
+  background:var(--accent);transform:scaleX(0);transform-origin:left;
+  transition:transform .34s cubic-bezier(.4,0,.2,1);
+}
+.card:hover{transform:translateY(-3px);box-shadow:var(--shadow-lift)}
+.card:hover::before{transform:scaleX(1)}
+.card-top{display:flex;align-items:center;justify-content:space-between;gap:1rem;margin-bottom:.9rem}
+.card-kind{
+  font-family:var(--mono);font-size:.635rem;letter-spacing:.11em;
+  text-transform:uppercase;color:var(--ink-3);
+}
+.card-arrow{width:.95rem;height:.95rem;color:var(--ink-3);flex:none;transition:all .26s ease}
+.card:hover .card-arrow{color:var(--accent);transform:translate(2.5px,-2.5px)}
+.card-title{
+  font-family:var(--serif);font-size:1.16rem;font-weight:500;
+  letter-spacing:-.015em;margin:0 0 .5rem;line-height:1.3;
+}
+.card-desc{font-size:.885rem;color:var(--ink-2);margin:0 0 1.15rem;line-height:1.62;flex:1}
+.stack{display:flex;flex-wrap:wrap;gap:.35rem}
+.tech{
+  font-family:var(--mono);font-size:.655rem;letter-spacing:.03em;
+  color:var(--ink-3);background:var(--bg-soft);border:1px solid var(--rule-soft);
+  padding:.2rem .5rem;border-radius:4px;
+}
+.card-meta{
+  display:flex;gap:1.1rem;margin-top:1rem;padding-top:.85rem;
+  border-top:1px solid var(--rule-soft);
+  font-family:var(--mono);font-size:.665rem;color:var(--ink-3);
+}
+.card-meta span{display:flex;align-items:center;gap:.32rem}
+.dot{width:.5rem;height:.5rem;border-radius:99px;background:var(--accent);flex:none}
+/* ── Footer ────────────────────────────────── */
+footer{
+  border-top:1px solid var(--rule-soft);padding:3rem 0 3.5rem;
+  display:flex;flex-wrap:wrap;gap:1.2rem;align-items:center;
+  font-size:.82rem;color:var(--ink-3);
+}
+footer a{color:var(--ink-2);text-decoration:none;transition:color .2s ease}
+footer a:hover{color:var(--accent)}
+.foot-links{display:flex;gap:1.3rem;margin-left:auto}
+/* ── Entrance animation ────────────────────── */
+.reveal{opacity:0;transform:translateY(14px)}
+.reveal.in{opacity:1;transform:none;transition:opacity .7s cubic-bezier(.2,0,0,1),transform .7s cubic-bezier(.2,0,0,1)}
+@media (prefers-reduced-motion:reduce){
+  .reveal{opacity:1!important;transform:none!important}
+  *{transition-duration:.01ms!important;animation-duration:.01ms!important}
+}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:3px}
+/* ── Responsive ────────────────────────────── */
+@media (max-width:860px){
+  .hero-grid{grid-template-columns:1fr;gap:2.5rem}
+  .portrait{max-width:12rem;aspect-ratio:1/1.1}
+  .facts{max-width:22rem}
+}
+@media (max-width:640px){
+  body{font-size:16px}
+  .wrap,.nav-in{padding-left:1.35rem;padding-right:1.35rem}
+  section{padding:3.75rem 0}
+  .hero{padding:2.75rem 0 3.5rem}
+  .nav-links{gap:1.1rem}
+  .nav-links a{font-size:.8rem}
+  .nav-links .hide-sm{display:none}
+  .sec-note{display:none}
+  .pub{grid-template-columns:1fr;gap:0}
+  .pub::before{display:block;margin-bottom:.5rem;padding-top:0}
+  .proj-grid{grid-template-columns:1fr}
+  .foot-links{margin-left:0;width:100%}
+}
+/* ── Lightbox ──────────────────────────────── */
+.lightbox{position:fixed;inset:0;z-index:200;display:none;place-items:center;
+  padding:4.5rem 3.5rem;background:rgba(16,16,14,.9);opacity:0;transition:opacity .25s ease;
+  backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);overflow:auto}
+.lightbox.open{display:grid}
+.lightbox.shown{opacity:1}
+.lightbox img{max-width:100%;max-height:calc(100vh - 9rem);width:auto;height:auto;
+  border-radius:8px;box-shadow:0 30px 70px -20px rgba(0,0,0,.7);cursor:zoom-in;
+  transform:scale(.96);transition:transform .3s cubic-bezier(.2,0,0,1)}
+.lightbox.shown img{transform:none}
+.lightbox.zoom{place-items:start center}
+.lightbox.zoom img{max-height:none;max-width:min(100%,1500px);cursor:zoom-out}
+.lb-close,.lb-nav{position:fixed;background:none;border:0;margin:0;color:#fff;
+  opacity:.55;cursor:pointer;line-height:1;font-family:var(--sans);
+  -webkit-appearance:none;appearance:none;transition:opacity .2s ease}
+.lb-close:hover,.lb-nav:hover{opacity:1}
+.lb-close{bottom:1.2rem;left:50%;transform:translateX(-50%);font-size:1.8rem;padding:.2rem .8rem}
+.lb-nav{top:50%;transform:translateY(-50%);font-size:2.6rem;padding:.5rem 1rem}
+.lb-prev{left:.6rem}
+.lb-next{right:.6rem}
+.lb-count{position:fixed;top:1.5rem;left:50%;transform:translateX(-50%);
+  color:#fff;opacity:.5;font-family:var(--mono);font-size:.72rem;letter-spacing:.09em}
+@media (max-width:640px){
+  .lightbox{padding:3.5rem 2.2rem}
+  .lightbox img{max-height:calc(100vh - 7rem)}
+  .lb-nav{font-size:2rem;padding:.4rem .4rem}
+  .lb-close{bottom:.9rem;font-size:1.5rem}
+}
+</style>
+</head>
+<body>
+<!-- ═══════════════ NAV ═══════════════ -->
+<nav class="nav" id="nav">
+  <div class="nav-in">
+    <a href="#top" class="nav-mark">Zhenzhen&nbsp;Wu<span>.</span></a>
+    <div class="nav-links">
+      <a href="#writing">Writing</a>
+      <a href="#projects">Projects</a>
+      <!-- [EDIT 2] Upload your CV as cv.pdf, then this link works as-is -->
+      <a href="cv.pdf" class="hide-sm" target="_blank" rel="noopener">CV</a>
+      <button class="theme-btn" id="themeBtn" aria-label="Toggle dark mode">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
+          <path d="M21 12.8A9 9 0 1111.2 3a7 7 0 009.8 9.8z"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+</nav>
+<main class="wrap" id="top">
+  <!-- ═══════════════ HERO ═══════════════ -->
+  <section class="hero">
+    <div class="hero-grid">
+      <div>
+        <p class="eyebrow">NYU Shanghai · Class of 2027</p>
+        <h1>Zhenzhen Wu<br><em>undergraduate</em> work.</h1>
+        <!-- [EDIT 3] Rewrite this bio in your own voice — 2 to 3 sentences -->
+        <p class="lede">
+          I am an undergraduate at NYU Shanghai, double majoring in <strong>Business and Finance</strong> and <strong>Mathematics</strong>.
+          This site collects the writing and projects I have produced as an undergraduate.
+        </p>
+        <div class="cta-row">
+          <a href="cv.pdf" class="btn btn-primary" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 3v13m0 0l-4.5-4.5M12 16l4.5-4.5M4 20h16"/>
+            </svg>
+            Curriculum Vitae
+          </a>
+          <a href="https://www.linkedin.com/in/zhenzhen-wu-9a32002a0/" class="btn" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.07 2.07 0 110-4.14 2.07 2.07 0 010 4.14zm1.78 13.02H3.55V9h3.57v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg>
+            LinkedIn
+          </a>
+          <a href="mailto:zw4233@nyu.edu" class="btn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2.5" y="4.5" width="19" height="15" rx="2.5"/><path d="M3 7l9 6 9-6"/>
+            </svg>
+            Email
+          </a>
+        </div>
+      </div>
+      <aside>
+        <!-- [EDIT 4] Add your photo: drop photo.jpg next to this file, then replace
+             this whole div with: <div class="portrait"><img src="photo.jpg" alt="Zhenzhen Wu"></div> -->
+        <div class="portrait"><img src="photo.jpg" alt="Zhenzhen Wu"></div>
+        <!-- [EDIT 5] Fill in your own focus area and email below -->
+        <dl class="facts">
+          <div class="fact"><dt>Major</dt><dd>Business and Finance &amp; Mathematics</dd></div>
+          <div class="fact"><dt>Focus</dt><dd>Business Analytics</dd></div>
+          <div class="fact"><dt>Email</dt><dd><a href="mailto:zw4233@nyu.edu">zw4233@nyu.edu</a></dd></div>
+          <div class="fact"><dt>Based</dt><dd>Shanghai, China</dd></div>
+        </dl>
+      </aside>
+    </div>
+  </section>
+  <!-- ═══════════════ WRITING ═══════════════ -->
+  <section id="writing">
+    <div class="sec-head reveal">
+      <span class="sec-num">01</span>
+      <h2 class="sec-title">Writings</h2>
+    </div>
+    <ol class="pub-list">
+      <li class="pub reveal">
+        <div>
+          <span class="pub-tag">Case Report</span>
+          <h3 class="pub-title"><a href="forecasting-project-1.pdf" target="_blank" rel="noopener">Modeling and Forecasting U.S. Federal Debt with a Log-ARIMA(4,1,4) Model</a></h3>
+          <p class="pub-meta">
+            STAT-GB 6018 Forecasting Time Series Data, NYU Stern · Prof. Avi Giloni
+            <span class="year">Fall 2025</span>
+          </p>
+          <p class="pub-abs">
+            Fits an ARIMA(4,1,4) model with a constant to the log of quarterly U.S. Federal
+            Debt (FRED series GFDEBTN, 1966–2025) after a first difference removes the
+            deterministic upward trend; AICc selects this specification over the no-constant
+            ARIMA(5,1,5) alternative (-1334.01 vs. -1330.70). The AR(4) and MA(4) coefficients
+            are highly significant (p &lt; 0.001), consistent with shocks that stay influential
+            for roughly four quarters — a near-annual cycle in quarterly data — and standardized
+            residuals show no significant ACF/PACF spikes. Ljung-Box tests flag mild residual
+            autocorrelation at the 3- and 6-year horizons (p = 0.001, 0.039) that fades by lag
+            36, pointing to a longer-run cyclical component the model doesn't fully absorb. A
+            50-quarter-ahead forecast tracks the historical trend closely, with 95% intervals
+            that widen at a reasonable rate.
+          </p>
+          <div class="pub-links">
+            <a class="chip" href="forecasting-project-1.pdf" target="_blank" rel="noopener">PDF</a>
+          </div>
+        </div>
+      </li>
+
+      <li class="pub reveal">
+        <div>
+          <span class="pub-tag">Case Report</span>
+          <h3 class="pub-title"><a href="forecasting-project-2.pdf" target="_blank" rel="noopener">Forecasting the USD/JPY Exchange Rate with an ARIMA(5,1,4)–GARCH(1,1) Model</a></h3>
+          <p class="pub-meta">
+            STAT-GB 6018 Forecasting Time Series Data, NYU Stern · Prof. Avi Giloni
+            <span class="year">Fall 2025</span>
+          </p>
+          <p class="pub-abs">
+            Models daily USD/JPY (Yahoo Finance, Dec 2020–Nov 2025) by taking logs to stabilize
+            the trend, then differencing once after the PACF showed a near-unit root and a second
+            difference introduced strong negative autocorrelation. An AICc grid search over
+            ARIMA(p,1,q) selects ARIMA(5,1,4) with a constant (AICc = -9619.17); the residuals are
+            serially uncorrelated but their squares are not, so an ARCH(q) sweep (q = 0–10) and a
+            GARCH(1,1) alternative are compared, with GARCH(1,1) winning decisively (AICc =
+            -9800.39 vs. -9701.83 for the best ARCH(4)). The fitted GARCH(1,1)
+            (&alpha;&#770; = 0.047, &beta;&#770; = 0.948, &alpha;&#770;+&beta;&#770; = 0.996) implies
+            a stationary, highly persistent volatility process. Layering GARCH(1,1) onto the
+            ARIMA(5,1,4) mean equation narrows the one-step-ahead 95% forecast interval for
+            log(JPY) from [5.04145, 5.06480] to [5.044003, 5.062238], and a backtest against the
+            |standardized residual| &gt; 1.96 rule finds a 5.39% violation rate across 1,299
+            observations — close to the nominal 5%, though a normal probability plot of the
+            residuals still shows tail deviations consistent with leptokurtosis the model doesn't
+            fully capture.
+          </p>
+          <div class="pub-links">
+            <a class="chip" href="forecasting-project-2.pdf" target="_blank" rel="noopener">PDF</a>
+          </div>
+        </div>
+      </li>
+      <li class="pub reveal">
+        <div>
+          <span class="pub-tag">Case Report</span>
+          <h3 class="pub-title"><a href="charity-ratings-correlation.pdf" target="_blank" rel="noopener">Charity Ratings and Accountability: A Correlation Analysis of CharityNavigator Data</a></h3>
+          <p class="pub-meta">
+            STAT-UB 17 Regression and Multivariate Data Analysis, NYU Stern · Prof. Sarah Abramowitz
+            <span class="year">Spring 2026</span>
+          </p>
+          <p class="pub-abs">
+            Uses CharityNavigator.org data to test how a charity's overall rating relates to its
+            accountability and transparency score and to whether it publishes audited financial
+            statements. Scatterplots show a clear positive linear pattern with the (continuous)
+            accountability and transparency score and no notable outliers, while the (binary)
+            audited-statements groups cluster at roughly 70&ndash;95 (no) versus 80&ndash;100 (yes)
+            overall rating. Correlation tests find both relationships statistically significant
+            (p &lt; 2.2e-16 and p &lt; 3.546e-16 respectively), with accountability and
+            transparency the stronger predictor (r = 0.707, a strong correlation by Cohen's scale)
+            versus audited-statement disclosure (r = 0.428, a moderate correlation) &mdash; the
+            former also admits a directional linear interpretation that the binary variable does
+            not.
+          </p>
+          <div class="pub-links">
+            <a
